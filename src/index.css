@@ -1,13 +1,174 @@
+/* Global styling */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  font-family: Arial, sans-serif; 
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #0D0D0D; 
+  border-radius: 5px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 60px;
+}
+
+.navbar a {
+  float: left;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.dropdown {
+  font-size: 20px;
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: #FFFFFF; /* White Text */
+  padding: 14px 16px;
+  background-color: inherit;
+  font: inherit; 
+  margin: 0; 
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #00FFFF; /* Cyan on hover */
+  color: #0D0D0D; /* Black text on hover */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1A1A1A; 
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content .header {
+  background: #00FFFF; 
+  padding: 16px;
+  color: #0D0D0D; 
+}
+
+/* Dropdown menu visibility on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Row container for dropdown content */
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Column styling inside dropdown */
+.column {
+  flex: 1;
+  padding: 10px;
+  background-color: #333333; /* Dark Gray for column background */
+  height: 250px;
+  margin: 5px;
+}
+
+.column a {
+  color: #FFFFFF; /* White text in dropdown links */
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+
+.column a:hover {
+  background-color: #00FFFF; /* Cyan on hover */
+  color: #0D0D0D; /* Black text on hover */
+}
+
+/* Hero image section */
+.hero-image {
+  margin-top: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh; /* Full screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hero text positioning */
+.hero-text {
+  text-align: center;
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.hero-text button {
+  padding: 10px 20px;
+  background-color: #00FFFF;
+  color: #0D0D0D;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.hero-text button:hover {
+  background-color: #0D0D0D;
+  color: #00FFFF;
+}
+
+/* About section styling */
+.about-section {
+  padding: 20px;
+  color: #FFFFFF; /* Set the text color for the about section */
+  background-color: black; /* Keep consistency with body background */
+}
+
+/* Header styling for About */
+#header {
+  background-color: #f1f1f1; /* Light Grey background */
+  padding: 50px 10px;
+  color: #000000; /* Black text */
+  text-align: center;
+  font-size: 90px;
+  font-weight: bold;
+  margin-top: 0;
+  transition: font-size 0.3s ease-in-out; /* Smooth transition for font size */
+}
+
+.about-section p {
+  font-size: 20px; /* Reasonable font size for body text */
+  line-height: 1.6; /* Better readability */
+}
+
+/* Ensure no extra margin in the About section */
+.header {
+  margin: 0;
 }
