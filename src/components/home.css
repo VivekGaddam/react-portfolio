@@ -1,0 +1,88 @@
+  
+.atkinson-hyperlegible-regular {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .atkinson-hyperlegible-bold {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .atkinson-hyperlegible-regular-italic {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .atkinson-hyperlegible-bold-italic {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+.hero-name{
+    display: flex;
+    padding: 40px ;
+    font-size: 3rem;
+    justify-content: center;
+  }
+  .colorname{
+    background-color: black;
+    padding: 10px; 
+    border-radius: 5px;
+  }
+  #waving-hand {
+    display: inline-block;
+    transform-origin: bottom center;
+    animation: wave 2s ease-in-out infinite;
+    animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  .Home{
+    display: flex;
+    flex-direction: column;
+  }
+  .anime{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    padding-bottom: 10px;
+    height: 80px;
+  }
+  .rocket {
+    display: inline-block;
+    font-size: 25px; /* You can adjust the size */
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* Change this value to control the bounce height */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .pointer{
+    display: inline-block;
+    font-size: 20px;
+    animation: point 2s infinite;
+  }
+  @keyframes point {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-10px);
+
+    }
+    100%{
+        transform: translateX(0);
+    }
+    
+  }

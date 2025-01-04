@@ -1,42 +1,23 @@
 import React from "react";
-
+import resume from "./Full_stack Resume.pdf"
 function Navbar() {
     return (
-        <div className="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <div className="dropdown">
-                <button className="dropbtn">Projects
-                    <i className="fa fa-caret-down" aria-hidden="true"></i>
-                </button>
-                <div className="dropdown-content">
-                    <div className="header">
-                        <h2>Projects</h2>
-                    </div>
-                    <div className="row">
-                        <div className="column">
-                            <h3>Machine Learning</h3>
-                            <a href="#">Project 1</a>
-                            <a href="#">Project 2</a>
-                            <a href="#">Project 3</a>
-                        </div>
-                        <div className="column">
-                            <h3>Web Development</h3>
-                            <a href="#">Project 1</a>
-                            <a href="#">Project 2</a>
-                            <a href="#">Project 3</a>
-                        </div>
-                        <div className="column">
-                            <h3>DSA</h3>
-                            <a href="#">Project 1</a>
-                            <a href="#">Project 2</a>
-                            <a href="#">Project 3</a>
-                        </div>
-                    </div>
-                </div>
+        <nav>
+            <div className="links atkinson-hyperlegible-bold">
+                <a href="/">Projects</a>
+                <a href={resume} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>
+                    Resume
+                    <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+</svg>
+                    </span>
+                </a>
+
+                <a href="/">Contact</a>
             </div>
-            <a href="#contact">Contact Me</a>
-        </div>
+        </nav>
     );
 }
 

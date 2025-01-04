@@ -1,0 +1,42 @@
+.about {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    font-size: large;
+    align-items: center;
+    background-color: rgba(71, 71, 71, 0.928);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    padding-left: 0;
+    margin: 0;
+    
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    justify-content: space-between;
+}
+.seemywork{
+    width: 610px;
+    align-items: flex-start;
+}
+.seemywork a{
+    display: inline-block;
+    border-bottom:2px solid gold;
+    padding-bottom: 5px;
+}
