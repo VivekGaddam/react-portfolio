@@ -1,4 +1,4 @@
-
+/* Existing Styles */
 .atkinson-hyperlegible-regular {
   font-family: "Atkinson Hyperlegible", serif;
   font-weight: 400;
@@ -24,6 +24,7 @@
   font-weight: 700;
   font-style: italic;
 }
+
 @keyframes wave {
   0% {
     transform: rotate(0deg);
@@ -56,21 +57,67 @@ nav{
   border-radius: 30px;
   color: white;
 }
+
 .links{
   display: flex;
   height: 70px;
   justify-content: space-evenly;
   align-items: center;
-
 }
+
 a {
   color: white;
   font-size: 1.35rem;
   font-weight: 1.75rem;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 a:hover {
   border-bottom: 2px solid gold;
-  transform: translateX(px); 
+  transform: translateX(px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+
+  nav {
+    height: 60px;
+  }
+
+  .links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  a {
+    font-size: 1.2rem;
+    font-weight: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 18px;
+  }
+
+  nav {
+    height: 50px;
+  }
+
+  .links {
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a {
+    font-size: 1.1rem;
+    font-weight: 1.4rem;
+  }
 }

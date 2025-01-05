@@ -3,11 +3,13 @@
     flex-direction: column;
     align-items: center;
 }
+
 .bag{
     display: inline-block;
     font-size: 30px;
     animation: bag 2s infinite;
 }
+
 @keyframes bag {
     0%{
         transform: translateY(0);
@@ -19,6 +21,7 @@
         transform: translateY(0);
     }
 }
+
 .container-ex{
     margin-left: auto;
     margin-right: auto;
@@ -33,26 +36,81 @@
     margin-bottom: 40px;
     margin-top: 10px;
 }
+
 a {
     color: white;
     font-size: 1.35rem;
     font-weight: 1.75rem;
-    text-decoration:none;
-  }
+    text-decoration: none;
+}
 
 a:hover {
-border-bottom: 2px solid gold;
-transform: translateX(px); 
+    border-bottom: 2px solid gold;
+    transform: translateX(5px);
 }
+
 .Links{
     color: rgb(95, 173, 237);
     padding-left: 10px;
 }
+
 .title{
     display: flex;
     width: 700px;
     justify-content: space-between;
 }
+
 .im{
     width: 600px;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intern-heading {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 900;
+}
+
+.time {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 400;
+}
+
+@media (max-width: 600px) {
+    .container-ex {
+        max-width: 100%;
+        padding: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .title {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .im {
+        width: 100%;
+    }
+
+    a {
+        font-size: 1.2rem;
+    }
+
+    .about p {
+        font-size: 16px; /* Adjust text size for small screens */
+    }
+
+    .intern-heading {
+        font-size: 16px; /* Make title font smaller for mobile */
+    }
+
+    .time {
+        font-size: 14px; /* Smaller time font for mobile */
+    }
 }

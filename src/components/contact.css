@@ -34,3 +34,17 @@ section{
         transform: translateY(0);
     }
 }
+
+/* Media query for phone screens */
+@media (max-width: 600px) {
+    .con {
+        font-size: 24px;
+    }
+
+    section {
+        max-width: 100%;
+        padding: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
