@@ -6,8 +6,9 @@ import codefroces from"./code-forces.svg"
 function About() {
     return (
         <div className="about">
+            <div className="atkinson-hyperlegible-bold" style={{ fontSize: "40px" }}>About <span >📝</span></div>
             <div className="container">
-                <div className="atkinson-hyperlegible-bold" style={{ fontSize: "40px" }}>About</div>
+                
                 <p className="atkinson-hyperlegible-regular" style={{ fontSize: "25px" }}> Welcome! I am Vivek Chandra, with strong skills in web development, some knowledge of machine learning, and extensive experience in Python. I am above 99% of users on LeetCode for Data Structures and Algorithms (DSA) in Python. Regarding web development, I have worked on several great projects. In machine learning, I have foundational knowledge and have completed projects related to both supervised and unsupervised learning.</p>
                 <div className="rating">
                     <div className="box atkinson-hyperlegible-bold"><div className="skill">WebDevelopment :</div> <span>
