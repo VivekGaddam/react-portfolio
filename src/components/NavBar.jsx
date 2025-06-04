@@ -1,23 +1,42 @@
-import React from "react";
-import resume from "./Full_stack Resume.pdf"
-function Navbar() {
-    return (
-        <nav>
-            <div className="links atkinson-hyperlegible-bold">
-                <a href="/">Projects</a>
-                <a href={resume} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>
-                    Resume
-                    <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
-  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
-</svg>
-                    </span>
-                </a>
+import React, { useState } from "react";
 
-                <a href="/">Contact</a>
-            </div>
-        </nav>
+function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+    
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    return (
+        <>
+            <nav className="navbar">
+                <div className="logo atkinson-hyperlegible-bold">
+                    VG
+                </div>
+                <div className="hamburger" onClick={toggleMenu}>
+                    <span className={`bar ${isOpen ? 'active' : ''}`}></span>
+                    <span className={`bar ${isOpen ? 'active' : ''}`}></span>
+                    <span className={`bar ${isOpen ? 'active' : ''}`}></span>
+                </div>
+                <div className={`links atkinson-hyperlegible-bold ${isOpen ? 'active' : ''}`}>
+                    <a href="#profile" onClick={toggleMenu}>Projects</a>
+                    <a href="#experiance" onClick={toggleMenu}>Experience </a>
+                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>
+                        Resume
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" className="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                                <path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#contact" onClick={toggleMenu}>Contact</a>
+                </div>
+            </nav>
+
+
+
+        </>
     );
 }
 

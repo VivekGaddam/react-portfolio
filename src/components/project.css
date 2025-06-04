@@ -3,6 +3,12 @@
     flex-direction: column;
     align-items: center;
     margin: 40px;
+    padding: 0 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .pro {
@@ -24,70 +30,215 @@
 }
 
 .container-pr {
-    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     max-width: 40rem;
+    width: 100%;
     font-size: large;
-    align-items: center;
     background-color: rgba(71, 71, 71, 0.928);
     border-radius: 20px;
     padding: 40px;
     margin-bottom: 40px;
     margin-top: 10px;
+    box-sizing: border-box;
 }
 
 .project-title {
     display: flex;
-    width: 600px;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: 1.5rem;
+    gap: 15px;
 }
 
 .imag {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
-/* Media query for phone screens */
-@media (max-width: 600px) {
-    .pro {
-        font-size: 24px;
-    }
+.imag img {
+    width: 100%;
+    max-width: 610px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
 
+.imag img:hover {
+    transform: scale(1.02);
+}
+
+.click {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.para {
+    width: 100%;
+}
+
+.para p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+a {
+    color: white;
+    font-size: 1.35rem;
+    font-weight: 1.75rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    border-bottom: 2px solid gold;
+    transform: translateX(5px);
+}
+
+.Links {
+    color: rgb(95, 173, 237);
+    padding-left: 10px;
+}
+
+.title {
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+}
+
+.im {
+    width: 600px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intern-heading {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 900;
+}
+
+.time {
+    font-family: "Atkinson Hyperlegible", serif;
+    font-weight: 400;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .project {
+        margin: 20px 10px;
+        padding: 0 10px;
+    }
+    
+    .heading {
+        font-size: 35px !important;
+    }
+    
+    .pro {
+        font-size: 25px;
+    }
+    
     .container-pr {
         max-width: 100%;
-        padding: 20px;
-        margin-top: 10px;
-        margin-bottom: 20px;
+        padding: 25px 20px;
+        margin-bottom: 30px;
     }
-
+    
     .project-title {
-        width: 100%;
+        font-size: 1.3rem;
         flex-direction: column;
         align-items: flex-start;
+        text-align: center;
+        gap: 10px;
     }
-
-    .imag {
-        padding: 10px;
+    
+    .project-title div {
+        align-self: center;
+    }
+    
+    .imag img {
+        max-width: 100%;
+        height: auto;
+        min-height: 200px;
+        object-fit: cover;
+    }
+    
+    .para p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    
+    a {
+        font-size: 1.1rem;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+    .project {
+        margin: 15px 5px;
+    }
+    
+    .heading {
+        font-size: 28px !important;
+    }
+    
+    .pro {
+        font-size: 20px;
+    }
+    
     .container-pr {
-        max-width: 80%;
-        padding: 30px;
+        padding: 20px 15px;
+        margin-bottom: 25px;
     }
-
+    
     .project-title {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
+        font-size: 1.1rem;
     }
+    
+    .imag img {
+        min-height: 180px;
+    }
+    
+    .para p {
+        font-size: 16px;
+    }
+    
+    a {
+        font-size: 1rem;
+    }
+    
+    .click {
+        font-size: 12px;
+    }
+}
 
-    .imag {
-        padding: 15px;
+/* Extra small screens */
+@media (max-width: 320px) {
+    .heading {
+        font-size: 24px !important;
+    }
+    
+    .container-pr {
+        padding: 15px 10px;
+    }
+    
+    .project-title {
+        font-size: 1rem;
+    }
+    
+    .para p {
+        font-size: 14px;
     }
 }

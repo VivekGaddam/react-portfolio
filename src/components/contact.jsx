@@ -2,7 +2,7 @@ import React from "react";
 import "./contact.css"
 function Contact() {
     return (
-        <div className="contact">
+        <div className="contact" id="contact">
             <div className="heading atkinson-hyperlegible-bold" style={{ fontSize: "45px" }}>Contact <span className="con">☎️</span></div>
             <section
                 style={{

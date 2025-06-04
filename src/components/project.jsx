@@ -5,7 +5,7 @@ import facialimg from "./data/Facialimg.png"
 import wander from "./data/Wanderlustimg.png"
 function Project() {
     return (
-        <div className="project">
+        <div className="project" id="project">
             <div className="heading atkinson-hyperlegible-bold" style={{ fontSize: "45px" }}>
                 Projects <span className="pro">🏗️</span>
             </div>
