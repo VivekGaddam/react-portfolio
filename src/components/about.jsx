@@ -1,107 +1,286 @@
-import React from "react";
-import "./about.css"
-import leetcode from "./leetcode.svg"
-import hackerrank from "./hackerrank.svg"
-import codefroces from"./code-forces.svg"
+import React, { useEffect, useRef } from "react";
+import { Star, StarHalf, Github, ExternalLink } from "lucide-react";
+
 function About() {
+  const containerRef = useRef(null);
+  const titleRef = useRef(null);
+  const descRef = useRef(null);
+  const skillsRef = useRef(null);
+  const linksRef = useRef(null);
+
+  useEffect(() => {
+    // Animate elements on load
+    const animateElements = () => {
+      if (titleRef.current) {
+        setTimeout(() => {
+          titleRef.current.style.animation = 'slideInLeft 0.8s ease-out both';
+        }, 200);
+      }
+      
+      if (descRef.current) {
+        setTimeout(() => {
+          descRef.current.style.animation = 'fadeInUp 1s ease-out 0.4s both';
+        }, 400);
+      }
+      
+      if (skillsRef.current) {
+        setTimeout(() => {
+          skillsRef.current.style.animation = 'slideInRight 0.8s ease-out 0.8s both';
+        }, 800);
+      }
+      
+      if (linksRef.current) {
+        setTimeout(() => {
+          linksRef.current.style.animation = 'zoomIn 0.8s ease-out 1.2s both';
+        }, 1200);
+      }
+    };
+
+    animateElements();
+  }, []);
+
+  const SkillRating = ({ skill, rating }) => {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
     return (
-        <div className="about">
-            <div className="atkinson-hyperlegible-bold" style={{ fontSize: "40px" }}>About <span >📝</span></div>
-            <div className="container">
-                
-                <p className="atkinson-hyperlegible-regular" style={{ fontSize: "25px" }}> Welcome! I am Vivek Chandra, with strong skills in web development, some knowledge of machine learning, and extensive experience in Python. I am above 99% of users on LeetCode for Data Structures and Algorithms (DSA) in Python. Regarding web development, I have worked on several great projects. In machine learning, I have foundational knowledge and have completed projects related to both supervised and unsupervised learning.</p>
-                <div className="rating">
-                    <div className="box atkinson-hyperlegible-bold"><div className="skill">WebDevelopment :</div> <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
-                    </svg>
-
-                        </span></div>
-                        <div className="box atkinson-hyperlegible-bold"><div className="skill">Machine Learning :</div> <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-half" viewBox="0 0 16 16">
-  <path d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"/>
-</svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
-                    </svg>
-                        </span></div>
-                        <div className="box atkinson-hyperlegible-bold"><div className="skill">Python : </div><span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-
-
-                        </span></div>
-                        <div className="box atkinson-hyperlegible-bold"><div className="skill">DSA : </div> <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star" viewBox="0 0 16 16">
-                        <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
-                    </svg>
-
-                        </span></div>
-                </div>
-                <div className="seemywork">
-                    <p className="atkinson-hyperlegible-regular" style={{}}>
-                    <span className="rocket">🚀</span>Check out my amazing projects on - <a href="https://github.com/VivekGaddam" style={{ display: 'inline-block', borderBottom: '2px solid gold', paddingBottom: '5px' }}>GitHub <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-</svg></a>.
-                        <br />
-                        <span className="rocket">🚀</span>Also, explore my DSA strengths on 
-                        <br />
-                        <a href="https://leetcode.com/u/vivekgaddam/"><span className="pointer">👉</span>Leetcode <img src={leetcode} alt="" width="20px" /></a>,
-                        <br />
-    <a href="https://www.hackerrank.com/profile/vivek_gaddam2005"><span className="pointer">👉</span>Hackerrank <img src={hackerrank} alt="" width='20px' /></a>,
-    <br />
-    <a href="https://codeforces.com/profile/Vivek_chandra_"><span className="pointer">👉</span>Codeforces <img src={codefroces} alt="" width="20px" /></a>
-                    </p>
-                </div>
-            </div>
+      <div className="bg-gray-900 border border-green-400 border-opacity-30 rounded-md p-4 hover:border-green-400 hover:border-opacity-60 transition-all duration-300 group">
+        <div className="flex justify-between items-center">
+          <span className="terminal-text text-green-300 font-medium group-hover:text-green-200 transition-colors">
+            {skill}
+          </span>
+          <div className="flex items-center space-x-1">
+            {[...Array(fullStars)].map((_, i) => (
+              <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+            ))}
+            {hasHalfStar && <StarHalf size={16} className="fill-yellow-400 text-yellow-400" />}
+            {[...Array(emptyStars)].map((_, i) => (
+              <Star key={i} size={16} className="text-gray-600" />
+            ))}
+          </div>
         </div>
+      </div>
     );
+  };
+
+  return (
+    <>
+      <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+        @keyframes slideInLeft {
+          from { opacity: 0; transform: translateX(-100px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(50px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInRight {
+          from { opacity: 0; transform: translateX(100px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes zoomIn {
+          from { opacity: 0; transform: scale(0.8); }
+          to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes matrixRain {
+          0% { transform: translateY(-100px); opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        @keyframes scan {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100vw); }
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+
+        .terminal-text {
+          font-family: 'JetBrains Mono', 'Courier New', monospace;
+        }
+
+        .cyber-text {
+          font-family: 'Orbitron', monospace;
+        }
+
+        .matrix-char {
+          color: #00ff41;
+          font-family: 'JetBrains Mono', monospace;
+          font-weight: 300;
+        }
+      `}</style>
+
+      <div 
+        ref={containerRef}
+        className="min-h-screen bg-black py-16 px-4 relative overflow-hidden"
+      >
+        {/* Matrix Rain Effect */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute matrix-char text-xs opacity-10"
+              style={{
+                left: `${i * 6.67}%`,
+                animation: `matrixRain ${4 + Math.random() * 3}s infinite ${Math.random() * 6}s linear`,
+                fontSize: '10px'
+              }}
+            >
+              {String.fromCharCode(0x30A0 + Math.random() * 96)}
+            </div>
+          ))}
+        </div>
+
+        {/* Scanning Line */}
+        <div 
+          className="absolute top-0 w-1 h-full bg-green-400 opacity-20"
+          style={{ animation: 'scan 12s infinite linear' }}
+        />
+
+        {/* Terminal Grid */}
+        <div className="absolute inset-0 opacity-5">
+          {[...Array(25)].map((_, i) => (
+            <div key={i} className="absolute w-full h-px bg-green-400" style={{ top: `${i * 4}%` }} />
+          ))}
+        </div>
+
+        <div id="about" className="max-w-6xl mx-auto relative z-10">
+          {/* Title Section */}
+          <div ref={titleRef} className="mb-12 opacity-0">
+            <div className="terminal-text text-sm md:text-base text-green-400 mb-3">
+              <span className="opacity-60">$ ./profile --show-details</span>
+            </div>
+            <h1 className="cyber-text text-4xl md:text-6xl font-bold text-white mb-4 tracking-wider">
+              ABOUT <span className="text-2xl md:text-4xl">📝</span>
+            </h1>
+            <div className="terminal-text text-xs text-gray-500 opacity-60">
+              [PROFILE_LOADED] [STATUS: ACTIVE] [SECURITY: VERIFIED]
+            </div>
+          </div>
+
+          {/* Description Section */}
+          <div ref={descRef} className="mb-12 opacity-0">
+            <div className="bg-gray-900 border border-green-400 border-opacity-30 rounded-lg p-6 md:p-8">
+              <div className="terminal-text text-green-400 text-xs mb-4 opacity-70">
+                $ cat profile.txt
+              </div>
+              <p className="terminal-text text-white text-lg md:text-xl leading-relaxed">
+                <span className="text-green-300">Welcome!</span> I am <span className="text-cyan-300 font-semibold">Vivek Chandra</span>, 
+                with strong skills in <span className="text-yellow-300">web development</span>, knowledge of <span className="text-purple-300">machine learning</span>, 
+                and extensive experience in <span className="text-blue-300">Python</span>. I am above <span className="text-green-300 font-bold">99%</span> of users on 
+                LeetCode for Data Structures and Algorithms (DSA) in Python. In web development, I have worked on several 
+                great projects. In machine learning, I have foundational knowledge and completed projects in both 
+                <span className="text-pink-300">supervised</span> and <span className="text-orange-300">unsupervised learning</span>.
+              </p>
+            </div>
+          </div>
+
+          {/* Skills Section */}
+          <div ref={skillsRef} className="mb-12 opacity-0">
+            <div className="terminal-text text-green-400 text-sm mb-4">
+              <span className="opacity-60">$ ./skills --analyze</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <SkillRating skill="Web Development" rating={4.5} />
+              <SkillRating skill="Machine Learning" rating={2.5} />
+              <SkillRating skill="Python" rating={5} />
+              <SkillRating skill="DSA" rating={4.5} />
+            </div>
+          </div>
+
+          {/* Links Section */}
+          <div ref={linksRef} className="opacity-0">
+            <div className="bg-gray-900 border border-green-400 border-opacity-30 rounded-lg p-6 md:p-8">
+              <div className="terminal-text text-green-400 text-sm mb-6">
+                <span className="opacity-60">$ ./connect --show-profiles</span>
+              </div>
+              
+              <div className="space-y-6">
+                {/* GitHub */}
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl">🚀</span>
+                  <span className="terminal-text text-white">Check out my amazing projects on</span>
+                  <a 
+                    href="https://github.com/VivekGaddam" 
+                    className="inline-flex items-center space-x-2 terminal-text text-green-300 hover:text-green-200 border-b-2 border-yellow-400 pb-1 transition-all duration-300 hover:border-green-300"
+                  >
+                    <span>GitHub</span>
+                    <Github size={16} />
+                  </a>
+                </div>
+
+                {/* Competitive Programming */}
+                <div className="terminal-text text-white">
+                  <div className="flex items-center space-x-3 mb-3">
+                    <span className="text-2xl">🚀</span>
+                    <span>Also, explore my DSA strengths on:</span>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ml-8">
+                    <a 
+                      href="https://leetcode.com/u/vivekgaddam/" 
+                      className="flex items-center space-x-3 bg-gray-800 border border-gray-600 rounded p-3 hover:border-green-400 hover:bg-gray-700 transition-all duration-300 group"
+                    >
+                      <span className="text-lg">👉</span>
+                      <span className="text-green-300 group-hover:text-green-200">LeetCode</span>
+                      <div className="w-5 h-5 bg-yellow-500 rounded"></div>
+                    </a>
+                    
+                    <a 
+                      href="https://www.hackerrank.com/profile/vivek_gaddam2005" 
+                      className="flex items-center space-x-3 bg-gray-800 border border-gray-600 rounded p-3 hover:border-green-400 hover:bg-gray-700 transition-all duration-300 group"
+                    >
+                      <span className="text-lg">👉</span>
+                      <span className="text-green-300 group-hover:text-green-200">HackerRank</span>
+                      <div className="w-5 h-5 bg-green-500 rounded"></div>
+                    </a>
+                    
+                    <a 
+                      href="https://codeforces.com/profile/Vivek_chandra_" 
+                      className="flex items-center space-x-3 bg-gray-800 border border-gray-600 rounded p-3 hover:border-green-400 hover:bg-gray-700 transition-all duration-300 group"
+                    >
+                      <span className="text-lg">👉</span>
+                      <span className="text-green-300 group-hover:text-green-200">Codeforces</span>
+                      <div className="w-5 h-5 bg-blue-500 rounded"></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Terminal Status */}
+            <div className="mt-6 terminal-text text-xs text-gray-500 opacity-60">
+              <div className="border border-gray-700 rounded p-3 bg-gray-900 bg-opacity-50">
+                <div className="flex justify-between items-center">
+                  <span>Profile Status: <span className="text-green-400">LOADED</span></span>
+                  <span>Skills Verified: <span className="text-cyan-400">TRUE</span></span>
+                  <span>Links Active: <span className="text-yellow-400">ALL</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Corner Brackets */}
+        <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-green-400 opacity-20"></div>
+        <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-green-400 opacity-20"></div>
+        <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-green-400 opacity-20"></div>
+        <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-green-400 opacity-20"></div>
+      </div>
+    </>
+  );
 }
 
 export default About;

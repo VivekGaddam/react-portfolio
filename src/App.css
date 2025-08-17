@@ -1,0 +1,30 @@
+@keyframes matrixRain {
+  0% { transform: translateY(-100px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+.matrix-char {
+  color: #00ff41;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-scanline {
+  animation: scanline 2s linear infinite;
+}
