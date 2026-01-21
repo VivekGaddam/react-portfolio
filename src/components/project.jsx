@@ -32,6 +32,30 @@ function Project() {
 
   const projectsData = [
     {
+  title: "NOFOODWASTE NGO Platform",
+  description: "Web platform for the NOFOODWASTE NGO to coordinate food donation and distribution. Enables donors, volunteers, and NGOs to connect efficiently, reducing food wastage and supporting hunger relief initiatives through a simple and accessible interface.",
+  image: "/api/placeholder/400/200",
+  liveUrl: "https://nofoodwastechennainngo.onrender.com/",
+  githubUrl: "https://github.com/VivekGaddam/nofoodwastechennai-NGO",
+  tech: ["React", "Node.js", "Express", "MongoDB"]
+},
+{
+  title: "SmartEducate",
+  description: "An educational management platform designed to simplify learning workflows. Focuses on organizing academic content, improving student–teacher interaction, and providing a structured digital environment for modern education systems. Currently under active development.",
+  image: "/api/placeholder/400/200",
+  liveUrl: null,
+  githubUrl: "https://github.com/VivekGaddam/SmartEducate",
+  tech: ["React", "Node.js", "MongoDB"]
+},
+{
+  title: "Civic Sense App",
+  description: "Mobile application aimed at improving civic awareness and public participation. Allows users to report civic issues, promote responsible citizenship, and engage with community-driven problem solving through a simple and intuitive app experience.",
+  image: "/api/placeholder/400/200",
+  liveUrl: null,
+  githubUrl: "https://github.com/VivekGaddam/civic_sense_app",
+  tech: ["React Native", "Mobile App Development"]
+},
+    {
       title: "CBIT ERP System",
       description: "Comprehensive college management platform with web scraping, leave tracker, semester calculator, and Google integration. Modern solution addressing original site limitations.",
       image: "/api/placeholder/400/200",
@@ -48,13 +72,62 @@ function Project() {
       tech: ["Python", "React", "OpenCV", "Machine Learning"]
     },
     {
+  title: "HackIndia Spark 6 — SyntaxError",
+  description: "Project built during the HackIndia Spark 6 event to solve real-time coding and problem-solving challenges. Showcases rapid prototyping, collaborative coding, and innovative solutions under time pressure.",
+  image: "/api/placeholder/400/200",
+  liveUrl: null,
+  githubUrl: "https://github.com/VivekGaddam/HackIndia_Spark_6_2025_SyntaxError",
+  tech: ["JavaScript", "Team Project", "Hackathon Development"]
+},
+    {
       title: "WanderLust Ways",
       description: "Travel platform with intelligent chatbot, smart filters, and Google Maps API. Built during hackathon using MERN stack and TravelAssistant.ai integration.",
       image: "/api/placeholder/400/200",
       liveUrl: "https://wanderlust-ways.web.app/",
       githubUrl: "https://github.com/VivekGaddam/WanderLustWays",
       tech: ["MERN Stack", "Google Maps API", "AI Chatbot", "OAuth"]
-    }
+    },
+    {
+  title: "Diabetes Prediction Model",
+  description: "Machine learning project to predict diabetes based on medical parameters. Built to understand data preprocessing, model training, and evaluation using classical ML techniques.",
+  image: "/api/placeholder/400/200",
+  liveUrl: null,
+  githubUrl: "https://github.com/VivekGaddam/Diabetes_Project",
+  tech: ["Python", "Machine Learning", "Pandas", "Scikit-learn"]
+},
+{
+  title: "Library Management System",
+  description: "Backend-focused project implementing a basic library management workflow including book records, users, and issue/return operations. Built to practice CRUD operations and system design basics.",
+  image: "/api/placeholder/400/200",
+  liveUrl: null,
+  githubUrl: "https://github.com/VivekGaddam/Library-Management-System",
+  tech: ["Python", "Backend Development", "Database"]
+},
+{
+  title: "IPL Match Prediction",
+  description: "Data-driven project analyzing historical IPL match data to predict outcomes. Focused on feature selection, model experimentation, and understanding real-world sports datasets.",
+  image: "/api/placeholder/400/200",
+  liveUrl: null,
+  githubUrl: "https://github.com/VivekGaddam/IPL_Match_prediction",
+  tech: ["Python", "Machine Learning", "Data Analysis"]
+},
+{
+  title: "To-Do Application",
+  description: "Simple to-do list application built to practice frontend fundamentals, state management, and basic user interactions.",
+  image: "/api/placeholder/400/200",
+  liveUrl: null,
+  githubUrl: "https://github.com/VivekGaddam/To-Do",
+  tech: ["HTML", "CSS", "JavaScript"]
+},
+{
+  title: "React Lifecycle Demo",
+  description: "Demonstration project showcasing React component lifecycle methods. Built to understand mounting, updating, and unmounting phases in React.",
+  image: "/api/placeholder/400/200",
+  liveUrl: null,
+  githubUrl: "https://github.com/VivekGaddam/LifeCycleDemo",
+  tech: ["React", "JavaScript"]
+}
+
   ];
 
   return (
